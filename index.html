@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MediFast – Medicines Delivered 24/7</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<style type="text/tailwindcss">
+  :root { box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  @layer components {
+    .btn { @apply inline-flex items-center justify-center rounded-lg px-5 py-2.5 font-semibold transition focus:outline-none focus-visible:ring-4 focus-visible:ring-teal-400; }
+    .btn-p { @apply btn bg-teal-600 text-white hover:bg-teal-700; }
+    .btn-o { @apply btn border border-teal-600 text-teal-700 hover:bg-teal-50 dark:text-teal-300 dark:hover:bg-slate-800; }
+    .card { @apply rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800; }
+    .sec { @apply mx-auto max-w-6xl px-4 py-14; }
+    .h2 { @apply text-2xl font-bold sm:text-3xl; }
+    .inp { @apply mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-slate-900 focus:outline-none focus:ring-4 focus:ring-teal-300 aria-[invalid=true]:border-red-500; }
+  }
+</style>
+</head>
+<body class="bg-white text-slate-800 dark:bg-slate-900 dark:text-slate-100 antialiased">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3 focus:text-slate-900">Skip to content</a>
+
+<!-- Header -->
+<header class="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur dark:border-slate-700 dark:bg-slate-900/95">
+  <div class="bg-teal-700 px-4 py-1.5 text-center text-xs text-white">Emergency line: <a class="font-semibold underline" href="tel:16533">16533 (toll-free)</a> · Free delivery on every order</div>
+  <div class="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
+    <a href="#" class="text-xl font-extrabold text-teal-700 dark:text-teal-300">💊 MediFast</a>
+    <nav aria-label="Main" class="ml-6 hidden gap-5 text-sm font-medium md:flex">
+      <a href="#features" class="hover:text-teal-600">Why us</a>
+      <a href="#shop" class="hover:text-teal-600">Shop</a>
+      <a href="#reviews" class="hover:text-teal-600">Reviews</a>
+      <a href="#faq" class="hover:text-teal-600">FAQ</a>
+      <a href="#contact" class="hover:text-teal-600">Contact</a>
+    </nav>
+    <div class="ml-auto flex items-center gap-2">
+      <button id="openCart" class="btn-o relative !px-3" aria-label="Open cart">🛒 <span class="hidden sm:inline ml-1">Cart</span>
+        <span id="badge" class="ml-1 rounded-full bg-teal-600 px-2 text-xs text-white">0</span></button>
+      <button id="menuBtn" class="btn-o !px-3 md:hidden" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+  <nav id="mobileNav" aria-label="Mobile" class="hidden border-t border-slate-200 px-4 py-3 text-sm font-medium dark:border-slate-700 md:hidden">
+    <a class="block py-2" href="#features">Why us</a><a class="block py-2" href="#shop">Shop</a>
+    <a class="block py-2" href="#reviews">Reviews</a><a class="block py-2" href="#faq">FAQ</a><a class="block py-2" href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+<!-- HOME VIEW -->
+<div id="view-home">
+  <section class="bg-gradient-to-b from-teal-50 to-white dark:from-slate-800 dark:to-slate-900">
+    <div class="sec grid items-center gap-8 md:grid-cols-2">
+      <div>
+        <p class="mb-3 inline-block rounded-full bg-red-100 px-3 py-1 text-xs font-semibold text-red-700">🚑 24/7 emergency medicine delivery</p>
+        <h1 class="text-3xl font-extrabold leading-tight sm:text-5xl">The medicine your family needs, at your door fast.</h1>
+        <p class="mt-4 text-slate-600 dark:text-slate-300">Order genuine medicines at company price, with free delivery and a 5% discount on orders of 3,000 BDT or more. Can’t find an imported item? Pre-order it.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#shop" class="btn-p">Shop now</a>
+          <button class="btn-o" data-open-cart>View cart</button>
+          <a href="tel:16533" class="btn-o">Call 16533</a>
+        </div>
+      </div>
+      <div class="card text-center" role="img" aria-label="Illustration of medicine, delivery and 24/7 support">
+        <div class="text-7xl" aria-hidden="true">💊🚚🩺</div>
+        <p class="mt-3 font-semibold">Genuine · Fast · Always open</p>
+        <div class="mt-4 grid grid-cols-3 gap-2 text-sm">
+          <div class="rounded-lg bg-teal-50 p-2 dark:bg-slate-700"><b class="block text-lg">24/7</b>Emergency</div>
+          <div class="rounded-lg bg-teal-50 p-2 dark:bg-slate-700"><b class="block text-lg">5%</b>Off 3000+</div>
+          <div class="rounded-lg bg-teal-50 p-2 dark:bg-slate-700"><b class="block text-lg">Free</b>Delivery</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="sec">
+    <h2 class="h2 text-center">Why families choose MediFast</h2>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="card"><div class="text-3xl" aria-hidden="true">💊</div><h3 class="mt-2 font-bold">Every kind of medicine</h3><p class="text-sm text-slate-600 dark:text-slate-300">From daily prescriptions to hard-to-find items, we solve the “not available” problem.</p></article>
+      <article class="card"><div class="text-3xl" aria-hidden="true">🚑</div><h3 class="mt-2 font-bold">24/7 emergency delivery</h3><p class="text-sm text-slate-600 dark:text-slate-300">Selected emergency medicines are delivered any hour, day or night.</p></article>
+      <article class="card"><div class="text-3xl" aria-hidden="true">🏷️</div><h3 class="mt-2 font-bold">Company price, no markup</h3><p class="text-sm text-slate-600 dark:text-slate-300">You pay the same price printed by the manufacturer.</p></article>
+      <article class="card"><div class="text-3xl" aria-hidden="true">🎁</div><h3 class="mt-2 font-bold">5% off around 3,000 BDT</h3><p class="text-sm text-slate-600 dark:text-slate-300">Discount applies automatically when your total reaches 3,000 BDT.</p></article>
+      <article class="card"><div class="text-3xl" aria-hidden="true">🆓</div><h3 class="mt-2 font-bold">Free delivery</h3><p class="text-sm text-slate-600 dark:text-slate-300">No delivery charge, whatever the order size.</p></article>
+      <article class="card"><div class="text-3xl" aria-hidden="true">✈️</div><h3 class="mt-2 font-bold">International pre-order</h3><p class="text-sm text-slate-600 dark:text-slate-300">Need an imported medicine? Pre-order and we’ll arrange it where applicable.</p></article>
+    </div>
+  </section>
+
+  <section id="shop" class="bg-slate-50 dark:bg-slate-800/50">
+    <div class="sec">
+      <h2 class="h2">Shop by category</h2>
+      <div class="mt-4 flex flex-col gap-3 sm:flex-row">
+        <label class="sr-only" for="search">Search medicines</label>
+        <input id="search" type="search" placeholder="Search medicine name…" class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-4 focus:ring-teal-300 sm:max-w-sm">
+      </div>
+      <div id="cats" class="mt-4 flex gap-2 overflow-x-auto pb-2" role="group" aria-label="Categories"></div>
+      <div id="grid" class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" aria-live="polite"></div>
+      <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">Prices shown are sample data. Replace with your real catalogue. Prescription medicines require a valid prescription.</p>
+    </div>
+  </section>
+
+  <section id="reviews" class="sec">
+    <h2 class="h2 text-center">What customers say</h2>
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
+      <figure class="card"><div aria-label="5 out of 5 stars" role="img">⭐⭐⭐⭐⭐</div><blockquote class="mt-2 text-sm">“Needed insulin for my father at 2 a.m. It reached us within the hour. Real lifesaver.”</blockquote><figcaption class="mt-3 text-sm font-semibold">Rafiq H., Dhaka</figcaption></figure>
+      <figure class="card"><div aria-label="5 out of 5 stars" role="img">⭐⭐⭐⭐⭐</div><blockquote class="mt-2 text-sm">“Same price as the printed one and delivery was free. The 5% discount applied automatically.”</blockquote><figcaption class="mt-3 text-sm font-semibold">Nusrat J., Chattogram</figcaption></figure>
+      <figure class="card"><div aria-label="4 out of 5 stars" role="img">⭐⭐⭐⭐</div><blockquote class="mt-2 text-sm">“I pre-ordered an imported medicine for my mother. They kept me updated by phone.”</blockquote><figcaption class="mt-3 text-sm font-semibold">Tanvir A., Sylhet</figcaption></figure>
+    </div>
+    <p class="mt-3 text-center text-xs text-slate-500 dark:text-slate-400">Sample reviews. Replace with real customer feedback.</p>
+  </section>
+
+  <section id="faq" class="bg-slate-50 dark:bg-slate-800/50">
+    <div class="sec max-w-3xl">
+      <h2 class="h2 text-center">Frequently asked questions</h2>
+      <div id="faqList" class="mt-6 space-y-3"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="rounded-2xl bg-teal-700 p-8 text-center text-white">
+      <h2 class="text-2xl font-bold sm:text-3xl">Need medicine urgently?</h2>
+      <p class="mt-2">Order online or call us any time, day or night.</p>
+      <div class="mt-5 flex flex-wrap justify-center gap-3">
+        <a href="#shop" class="btn bg-white text-teal-800 hover:bg-teal-50">Shop now</a>
+        <a href="tel:09635000670" class="btn border border-white text-white hover:bg-teal-800">Call 09635000670</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CART VIEW -->
+<div id="view-cart" class="sec hidden">
+  <a href="#shop" class="text-sm text-teal-700 underline dark:text-teal-300">← Continue shopping</a>
+  <h1 class="mt-2 text-3xl font-extrabold">Your cart</h1>
+  <section id="orderOK" class="card mt-6 hidden text-center" role="status" tabindex="-1">
+    <div class="text-6xl" aria-hidden="true">✅</div>
+    <h2 class="mt-2 text-2xl font-bold">Order placed successfully!</h2>
+    <p id="okText" class="mt-2 text-sm text-slate-600 dark:text-slate-300"></p>
+    <a id="okBack" href="#shop" class="btn-p mt-4">Continue shopping</a>
+  </section>
+  <div id="cartGrid" class="mt-6 grid gap-6 lg:grid-cols-3">
+    <div class="lg:col-span-2">
+    <div id="cartPage" class="space-y-3"></div>
+    <form id="custForm" novalidate class="card mt-6" aria-labelledby="custH">
+      <h2 id="custH" class="font-bold">Customer information</h2>
+      <p class="text-xs text-slate-500 dark:text-slate-400">Fields marked * are required.</p>
+      <div class="mt-3 grid gap-4 sm:grid-cols-2">
+        <div><label for="cName" class="text-sm font-medium">Full name *</label><input id="cName" class="inp" autocomplete="name" required aria-required="true" aria-describedby="cName-err"><p id="cName-err" role="alert" class="mt-1 text-xs text-red-600"></p></div>
+        <div><label for="cPhone" class="text-sm font-medium">Mobile number *</label><input id="cPhone" type="tel" inputmode="tel" placeholder="01XXXXXXXXX" class="inp" autocomplete="tel" required aria-required="true" aria-describedby="cPhone-err"><p id="cPhone-err" role="alert" class="mt-1 text-xs text-red-600"></p></div>
+        <div class="sm:col-span-2"><label for="cEmail" class="text-sm font-medium">Email *</label><input id="cEmail" type="email" class="inp" autocomplete="email" required aria-required="true" aria-describedby="cEmail-err"><p id="cEmail-err" role="alert" class="mt-1 text-xs text-red-600"></p></div>
+        <div class="sm:col-span-2"><label for="cAddr" class="text-sm font-medium">Delivery address *</label><textarea id="cAddr" rows="3" class="inp" autocomplete="street-address" required aria-required="true" aria-describedby="cAddr-err"></textarea><p id="cAddr-err" role="alert" class="mt-1 text-xs text-red-600"></p></div>
+      </div>
+    </form>
+    </div>
+    <aside class="card h-fit" aria-label="Order summary">
+      <h2 class="font-bold">Order summary</h2>
+      <div id="sumPage" class="mt-3 space-y-2 text-sm"></div>
+      <button id="checkout" class="btn-p mt-4 w-full">Place Order</button>
+      <p class="mt-2 text-center text-xs text-slate-500 dark:text-slate-400">You’ll review your order before it’s confirmed.</p>
+    </aside>
+  </div>
+</div>
+</main>
+
+<footer id="contact" class="bg-slate-900 text-slate-200">
+  <div class="h-1 bg-gradient-to-r from-teal-400 via-emerald-400 to-sky-400"></div>
+  <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 text-sm sm:grid-cols-2 lg:grid-cols-4">
+    <section aria-labelledby="f-brand">
+      <h2 id="f-brand" class="text-xl font-extrabold text-white">💊 MediFast</h2>
+      <p class="mt-2 text-slate-300">Genuine medicines, fair prices, fast delivery.</p>
+      <ul class="mt-3 flex flex-wrap gap-2 text-xs"><li class="rounded-full bg-slate-800 px-3 py-1">🚑 24/7</li><li class="rounded-full bg-slate-800 px-3 py-1">🆓 Free delivery</li><li class="rounded-full bg-slate-800 px-3 py-1">🏷️ Company price</li></ul>
+    </section>
+    <nav aria-label="Footer links">
+      <h2 class="font-semibold text-white">Quick links</h2>
+      <ul class="mt-3 space-y-2">
+        <li><a class="rounded underline-offset-4 hover:text-teal-300 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-300" href="#shop">Shop</a></li>
+        <li><a class="rounded underline-offset-4 hover:text-teal-300 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-300" href="#features">Why us</a></li>
+        <li><a class="rounded underline-offset-4 hover:text-teal-300 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-300" href="#faq">FAQ</a></li>
+        <li><a class="rounded underline-offset-4 hover:text-teal-300 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-300" href="#cart">Cart</a></li>
+      </ul>
+    </nav>
+    <section aria-labelledby="f-contact">
+      <h2 id="f-contact" class="font-semibold text-white">Contact</h2>
+      <address class="mt-3 space-y-2 not-italic">
+        <p>📞 <a class="underline hover:text-teal-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-300" href="tel:09635000670">09635000670</a></p>
+        <p>☎️ Toll-free: <a class="underline hover:text-teal-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-300" href="tel:16533">16533</a></p>
+        <p>📍 [Add your full address here]</p>
+      </address>
+    </section>
+    <section aria-labelledby="f-news">
+      <h2 id="f-news" class="font-semibold text-white">Offers by email</h2>
+      <form id="nl" novalidate class="mt-3 flex gap-2">
+        <label for="nlEmail" class="sr-only">Email address</label>
+        <input id="nlEmail" type="email" placeholder="you@example.com" autocomplete="email" class="min-w-0 flex-1 rounded-lg px-3 py-2 text-slate-900 focus:outline-none focus:ring-4 focus:ring-teal-300">
+        <button class="btn bg-teal-400 !px-4 text-slate-900 hover:bg-teal-300">Join</button>
+      </form>
+      <p id="nlMsg" role="status" class="mt-2 text-xs"></p>
+    </section>
+  </div>
+  <div class="border-t border-slate-700 px-4 py-4">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 text-xs text-slate-400 sm:flex-row">
+      <p>© 2026 MediFast. Always consult a doctor or pharmacist before use.</p>
+      <a href="#" class="rounded text-slate-200 underline focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-300">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart drawer -->
+<div id="overlay" class="fixed inset-0 z-40 hidden bg-black/50"></div>
+<aside id="drawer" class="fixed right-0 top-0 z-50 flex h-full w-full max-w-sm translate-x-full flex-col bg-white shadow-xl transition-transform dark:bg-slate-900" aria-label="Cart" aria-hidden="true" style="padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)">
+  <div class="flex items-center justify-between border-b border-slate-200 p-4 dark:border-slate-700"><h2 class="text-lg font-bold">Your cart</h2><button id="closeCart" class="btn-o !px-3 !py-1" aria-label="Close cart">✕</button></div>
+  <div id="drawerItems" class="flex-1 space-y-3 overflow-y-auto p-4"></div>
+  <div class="border-t border-slate-200 p-4 dark:border-slate-700"><div id="drawerSum" class="space-y-1 text-sm"></div>
+    <a href="#cart" id="goCart" class="btn-p mt-3 w-full">View cart &amp; checkout</a></div>
+</aside>
+
+<!-- Offer modal -->
+<div id="offer" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4" role="dialog" aria-modal="true" aria-labelledby="offerTitle">
+  <div class="card w-full max-w-md text-center">
+    <div class="text-5xl" aria-hidden="true">🎁</div>
+    <h2 id="offerTitle" class="mt-2 text-2xl font-bold">5% off orders of 3,000 BDT+</h2>
+    <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Free delivery on every order, and company-price medicines. Discount is applied automatically in your cart.</p>
+    <div class="mt-5 flex justify-center gap-3"><a href="#shop" id="offerShop" class="btn-p">Shop now</a><button id="offerClose" class="btn-o">Maybe later</button></div>
+  </div>
+</div>
+
+<!-- Order confirmation modal -->
+<div id="confirm" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4" role="dialog" aria-modal="true" aria-labelledby="confTitle">
+  <div class="card max-h-full w-full max-w-md overflow-y-auto">
+    <h2 id="confTitle" class="text-xl font-bold">Confirm your order</h2>
+    <div id="cSum" class="mt-3 space-y-3 text-sm"></div>
+    <p id="cErr" role="alert" class="mt-3 hidden rounded-lg bg-red-100 p-3 text-sm text-red-700"></p>
+    <div class="mt-5 flex gap-3"><button id="cBack" class="btn-o flex-1">Edit</button><button id="cGo" class="btn-p flex-1">Confirm order</button></div>
+  </div>
+</div>
+
+<script>
+const PRODUCTS = [
+  {id:1,n:"Napa (Paracetamol 500mg) ×10",c:"Pain & Fever",p:20,i:"🌡️",e:true},
+  {id:2,n:"Insulin Pen (emergency stock)",c:"Diabetes",p:950,i:"💉",e:true},
+  {id:3,n:"Salbutamol Inhaler",c:"Emergency 24/7",p:280,i:"🫁",e:true},
+  {id:4,n:"ORS Saline ×20 sachets",c:"Emergency 24/7",p:120,i:"💧",e:true},
+  {id:5,n:"Amlodipine 5mg ×30",c:"Heart & BP",p:150,i:"❤️"},
+  {id:6,n:"Azithromycin 500mg ×6",c:"Antibiotics",p:360,i:"💊"},
+  {id:7,n:"Metformin 500mg ×60",c:"Diabetes",p:210,i:"🩸"},
+  {id:8,n:"Baby Formula 400g",c:"Baby & Mother",p:850,i:"🍼"},
+  {id:9,n:"Prenatal Vitamins ×60",c:"Baby & Mother",p:690,i:"🤰"},
+  {id:10,n:"Imported Insulin Analog (pre-order)",c:"Imported",p:3200,i:"✈️",pre:true},
+  {id:11,n:"Imported Heart Medicine (pre-order)",c:"Imported",p:2400,i:"✈️",pre:true},
+  {id:12,n:"Digital BP Monitor",c:"Heart & BP",p:1800,i:"🩺"}
+];
+const CATS = ["All","Emergency 24/7","Pain & Fever","Diabetes","Heart & BP","Antibiotics","Baby & Mother","Imported"];
+const FAQS = [
+  ["Do you deliver at night?","Yes. Selected emergency medicines are delivered 24/7. Call 16533 (toll-free) for urgent requests."],
+  ["Is delivery really free?","Yes, delivery is free on all orders."],
+  ["How does the 5% discount work?","When your cart total reaches 3,000 BDT, 5% is deducted automatically."],
+  ["Are prices the same as in stores?","Yes. We charge the company (printed) price."],
+  ["Can I pre-order imported medicines?","Yes, where applicable. Add the item to your cart and our team will confirm availability and timing by phone."],
+  ["Do I need a prescription?","Prescription-only medicines require a valid prescription, which our team will verify before dispatch."]
+];
+const FREE = 3000, RATE = 0.05;
+let cat = "All", q = "", cart = {};
+try { cart = JSON.parse(localStorage.getItem("mf_cart") || "{}"); } catch (e) { cart = {}; }
+const $ = s => document.querySelector(s);
+const fmt = n => Math.round(n).toLocaleString("en-US") + " BDT";
+const save = () => { try { localStorage.setItem("mf_cart", JSON.stringify(cart)); } catch (e) {} };
+const lines = () => Object.entries(cart).map(([id, qty]) => ({ ...PRODUCTS.find(p => p.id == id), qty })).filter(l => l.n);
+function totals() {
+  const sub = lines().reduce((s, l) => s + l.p * l.qty, 0);
+  const disc = sub >= FREE ? sub * RATE : 0;
+  return { sub, disc, total: sub - disc };
+}
+function sumHTML(t) {
+  const left = FREE - t.sub;
+  return `<div class="flex justify-between"><span>Subtotal</span><span>${fmt(t.sub)}</span></div>
+  <div class="flex justify-between ${t.disc ? "text-green-600 font-semibold" : ""}"><span>5% discount</span><span>−${fmt(t.disc)}</span></div>
+  <div class="flex justify-between text-teal-600 font-semibold"><span>Delivery</span><span>FREE</span></div>
+  <div class="flex justify-between border-t border-slate-200 pt-2 text-base font-bold dark:border-slate-700"><span>Total</span><span>${fmt(t.total)}</span></div>
+  <p class="text-xs text-slate-500 dark:text-slate-400">${t.sub && left > 0 ? `Add ${fmt(left)} more to get 5% off.` : t.sub ? "🎉 5% discount applied." : ""}</p>`;
+}
+function itemHTML(l) {
+  return `<div class="card flex items-center gap-3 !p-3"><span class="text-3xl" aria-hidden="true">${l.i}</span>
+  <div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold">${l.n}</p><p class="text-xs">${fmt(l.p)}${l.pre ? " · Pre-order" : ""}</p></div>
+  <div class="flex items-center gap-1"><button class="btn-o !px-2 !py-0.5" data-dec="${l.id}" aria-label="Decrease ${l.n}">−</button><span class="w-6 text-center" aria-live="polite">${l.qty}</span><button class="btn-o !px-2 !py-0.5" data-inc="${l.id}" aria-label="Increase ${l.n}">+</button></div>
+  <button class="px-1 text-red-600" data-rm="${l.id}" aria-label="Remove ${l.n}">🗑</button></div>`;
+}
+function renderCart() {
+  const ls = lines(), t = totals(), empty = '<p class="text-sm text-slate-500">Your cart is empty.</p>';
+  $("#badge").textContent = ls.reduce((s, l) => s + l.qty, 0);
+  $("#drawerItems").innerHTML = ls.map(itemHTML).join("") || empty;
+  $("#cartPage").innerHTML = ls.map(itemHTML).join("") || empty;
+  $("#drawerSum").innerHTML = $("#sumPage").innerHTML = sumHTML(t);
+  $("#checkout").disabled = !ls.length;
+  $("#checkout").classList.toggle("opacity-50", !ls.length);
+}
+function renderShop() {
+  $("#cats").innerHTML = CATS.map(c => `<button data-cat="${c}" aria-pressed="${c === cat}" class="btn whitespace-nowrap !py-1.5 text-sm ${c === cat ? "bg-teal-600 text-white" : "border border-slate-300 bg-white text-slate-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"}">${c}</button>`).join("");
+  const list = PRODUCTS.filter(p => (cat === "All" || p.c === cat || (cat === "Emergency 24/7" && p.e)) && p.n.toLowerCase().includes(q));
+  $("#grid").innerHTML = list.map(p => `<article class="card flex flex-col"><div class="text-5xl" role="img" aria-label="${p.c}">${p.i}</div>
+    <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">${p.c}${p.e ? " · 🚑 24/7" : ""}</p><h3 class="mt-1 flex-1 font-semibold">${p.n}</h3>
+    <p class="mt-2 text-lg font-bold text-teal-700 dark:text-teal-300">${fmt(p.p)}</p>
+    <button class="btn-p mt-3" data-add="${p.id}">${p.pre ? "Pre-order" : "Add to cart"}</button></article>`).join("") || '<p class="col-span-full text-sm">No medicines found.</p>';
+}
+function add(id, d) {
+  cart[id] = (cart[id] || 0) + d;
+  if (cart[id] <= 0) delete cart[id];
+  save(); renderCart();
+}
+// Events
+document.addEventListener("click", e => {
+  const t = e.target.closest("button,a"); if (!t) return;
+  if (t.dataset.add) { add(t.dataset.add, 1); openDrawer(); }
+  else if (t.dataset.inc) add(t.dataset.inc, 1);
+  else if (t.dataset.dec) add(t.dataset.dec, -1);
+  else if (t.dataset.rm) { delete cart[t.dataset.rm]; save(); renderCart(); }
+  else if (t.dataset.cat) { cat = t.dataset.cat; renderShop(); }
+  else if (t.hasAttribute("data-open-cart") || t.id === "openCart") location.hash = "cart", closeDrawer();
+});
+$("#openCart").onclick = openDrawer;
+$("#search").oninput = e => { q = e.target.value.toLowerCase(); renderShop(); };
+$("#menuBtn").onclick = () => { const m = $("#mobileNav"), o = m.classList.toggle("hidden"); $("#menuBtn").setAttribute("aria-expanded", !o); };
+$("#mobileNav").onclick = e => { if (e.target.tagName === "A") { $("#mobileNav").classList.add("hidden"); $("#menuBtn").setAttribute("aria-expanded", "false"); } };
+function openDrawer() { $("#drawer").classList.remove("translate-x-full"); $("#drawer").setAttribute("aria-hidden", "false"); $("#overlay").classList.remove("hidden"); $("#closeCart").focus(); }
+function closeDrawer() { $("#drawer").classList.add("translate-x-full"); $("#drawer").setAttribute("aria-hidden", "true"); $("#overlay").classList.add("hidden"); }
+$("#closeCart").onclick = $("#overlay").onclick = closeDrawer;
+$("#goCart").onclick = closeDrawer;
+// ---- Customer form validation ----
+const F = { name: "#cName", phone: "#cPhone", email: "#cEmail", address: "#cAddr" };
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/, PHONE_RE = /^(?:\+?88)?01[3-9]\d{8}$/;
+const readCust = () => Object.fromEntries(Object.entries(F).map(([k, s]) => [k, $(s).value.trim()]));
+function validate(v) {
+  const e = {};
+  if (!v.name) e.name = "Please enter your name.";
+  if (!PHONE_RE.test(v.phone.replace(/[\s-]/g, ""))) e.phone = "Enter a valid mobile number, e.g. 01712345678.";
+  if (!EMAIL_RE.test(v.email)) e.email = "Enter a valid email address.";
+  if (v.address.length < 10) e.address = "Please enter your full delivery address.";
+  return e;
+}
+function showErrors(e) {
+  for (const k in F) {
+    $(F[k]).setAttribute("aria-invalid", !!e[k]);
+    $(F[k] + "-err").textContent = e[k] || "";
+  }
+}
+for (const k in F) $(F[k]).addEventListener("input", () => { $(F[k]).setAttribute("aria-invalid", "false"); $(F[k] + "-err").textContent = ""; });
+$("#custForm").onsubmit = e => { e.preventDefault(); $("#checkout").click(); };
+
+// ---- Place order: validate -> confirm -> submit -> success ----
+const conf = $("#confirm");
+const openConf = () => { conf.classList.replace("hidden", "flex"); $("#cGo").focus(); };
+const closeConf = () => { conf.classList.replace("flex", "hidden"); $("#cErr").classList.add("hidden"); $("#checkout").focus(); };
+$("#checkout").onclick = () => {
+  const v = readCust(), er = validate(v);
+  showErrors(er);
+  const first = Object.keys(er)[0];
+  if (first) { $(F[first]).focus(); return; }
+  const t = totals();
+  $("#cSum").innerHTML = `<ul class="space-y-1">${lines().map(l => `<li class="flex justify-between gap-2"><span>${l.n} × ${l.qty}</span><span>${fmt(l.p * l.qty)}</span></li>`).join("")}</ul>
+    <div class="border-t border-slate-200 pt-2 dark:border-slate-700">${sumHTML(t)}</div>
+    <div class="rounded-lg bg-slate-100 p-3 dark:bg-slate-700"><b>${v.name}</b><br>${v.phone} · ${v.email}<br>${v.address.replace(/</g, "&lt;")}</div>`;
+  openConf();
+};
+$("#cBack").onclick = closeConf;
+$("#cGo").onclick = async () => {
+  const btn = $("#cGo"), v = readCust(), t = totals();
+  btn.disabled = true; btn.textContent = "Placing order…"; $("#cErr").classList.add("hidden");
+  try {
+    // Demo only: replace with fetch("/api/orders", { method: "POST", body: JSON.stringify({ customer: v, items: lines(), total: t.total }) })
+    await new Promise(r => setTimeout(r, 1200));
+    const id = "MF" + Date.now().toString().slice(-6);
+    $("#okText").textContent = `Thank you, ${v.name}! Order ${id} for ${fmt(t.total)} (free delivery) is confirmed. We’ll call ${v.phone} shortly.`;
+    cart = {}; save(); renderCart(); $("#custForm").reset();
+    conf.classList.replace("flex", "hidden");
+    $("#cartGrid").classList.add("hidden"); $("#orderOK").classList.remove("hidden"); $("#orderOK").focus();
+  } catch (err) {
+    $("#cErr").textContent = "We couldn’t place your order. Please try again or call 16533.";
+    $("#cErr").classList.remove("hidden");
+  } finally { btn.disabled = false; btn.textContent = "Confirm order"; }
+};
+$("#okBack").onclick = () => { $("#orderOK").classList.add("hidden"); $("#cartGrid").classList.remove("hidden"); location.hash = "shop"; };
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#cGo").disabled && !conf.classList.contains("hidden")) closeConf(); });
+
+// ---- Footer newsletter ----
+$("#nl").onsubmit = e => {
+  e.preventDefault();
+  const ok = EMAIL_RE.test($("#nlEmail").value.trim());
+  $("#nlMsg").textContent = ok ? "Thanks! You’re on the list." : "Please enter a valid email address.";
+  $("#nlMsg").className = "mt-2 text-xs " + (ok ? "text-teal-300" : "text-red-300");
+  if (ok) $("#nl").reset();
+};
+// FAQ accordion
+$("#faqList").innerHTML = FAQS.map((f, i) => `<div class="card !p-0"><h3><button class="flex w-full items-center justify-between p-4 text-left font-semibold focus:outline-none focus-visible:ring-4 focus-visible:ring-teal-400" aria-expanded="false" aria-controls="a${i}" id="q${i}">${f[0]}<span aria-hidden="true">＋</span></button></h3><div id="a${i}" role="region" aria-labelledby="q${i}" class="hidden px-4 pb-4 text-sm text-slate-600 dark:text-slate-300">${f[1]}</div></div>`).join("");
+$("#faqList").onclick = e => {
+  const b = e.target.closest("button"); if (!b) return;
+  const open = b.getAttribute("aria-expanded") === "true";
+  b.setAttribute("aria-expanded", !open);
+  b.lastElementChild.textContent = open ? "＋" : "－";
+  document.getElementById(b.getAttribute("aria-controls")).classList.toggle("hidden", open);
+};
+// Offer modal
+const offer = $("#offer");
+const showOffer = () => { offer.classList.replace("hidden", "flex"); $("#offerClose").focus(); };
+const hideOffer = () => { offer.classList.replace("flex", "hidden"); try { sessionStorage.setItem("mf_offer", "1"); } catch (e) {} };
+$("#offerClose").onclick = $("#offerShop").onclick = hideOffer;
+offer.onclick = e => { if (e.target === offer) hideOffer(); };
+document.addEventListener("keydown", e => { if (e.key === "Escape") { hideOffer(); closeDrawer(); } });
+let seen = false; try { seen = sessionStorage.getItem("mf_offer"); } catch (e) {}
+if (!seen) setTimeout(showOffer, 4000);
+// Hash routing: #cart shows cart page, anything else shows home
+function route() {
+  const cartView = location.hash === "#cart";
+  $("#view-cart").classList.toggle("hidden", !cartView);
+  $("#view-home").classList.toggle("hidden", cartView);
+  if (cartView) window.scrollTo(0, 0);
+  else if (location.hash) setTimeout(() => document.getElementById(location.hash.slice(1))?.scrollIntoView(), 0);
+}
+addEventListener("hashchange", route);
+renderShop(); renderCart(); route();
+</script>
+</body>
+</html>
